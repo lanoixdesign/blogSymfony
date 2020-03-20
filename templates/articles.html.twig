@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr_FR">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+<header>
+    <div class="logo ">
+        <img class="img-fluid" src="{{ asset('img/logo_google.png') }}" alt="logo"></div>
+    <nav>
+        <ul>
+            <li> <a href="{{ path('accueil') }}">Accueil</a></li>
+            <li> <a href="{{ path('articles', { 'id': 1 }) }}">Article 1</a></li>
+            <li> <a href="{{ path('articles', { 'id': 2 }) }}">Article 2</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        {% if article.published %}
+            <article>
+                <img src="{{ article.image }}" alt="{{ article.title }}">
+                <h1>{{ article.title }}</h1>
+                <p>{{ article.content }}</p>
+
+            </article>
+        {% else %}
+            <p>L'article demandé n'est pas en ligne</p>
+        {% endif %}
+
+    </main>
+
+
+<footer>
+
+    <nav>
+        <ul>
+            <li> <a href="{{ path('accueil') }}">Accueil</a></li>
+            <li> <a href="{{ path('articles', { 'id': 1 }) }}">Article 1</a></li>
+            <li> <a href="{{ path('articles', { 'id': 2 }) }}">Article 2</a></li>
+
+        </ul>
+    </nav>
+
+</footer>
+
+
+
+
+</body>
+</html>
